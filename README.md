@@ -1,1 +1,1 @@
-# ikitaria.site.jp
+# ikitaria
