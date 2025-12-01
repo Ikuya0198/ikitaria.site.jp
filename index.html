@@ -3,110 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikitaria | Japan-Italy Premium Trading</title>
+    <title>Ikitaria | Japan × Italy Premium Trading House</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
+        /* ===========================================
+           Base Theme (Quiet Luxury Style)
+        ============================================ */
+        :root {
+            --bg-light: #faf8f5;
+            --bg-white: #ffffff;
+            --text-main: #2a2a2a;
+            --text-soft: #6b6b6b;
+            --accent-gold: #c7b28a;
+            --accent-darkgold: #a8966d;
+            --border-light: rgba(0,0,0,0.1);
+            --radius: 18px;
+            --max-width: 1080px;
+        }
+
         body {
             margin: 0;
+            padding: 0;
+            background: var(--bg-light);
             font-family: 'Lato', sans-serif;
-            background: #faf8f5;
-            color: #333;
-            line-height: 1.7;
+            color: var(--text-main);
+            line-height: 1.8;
         }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.03em;
+        }
+
+        /* ===========================================
+           Header Section
+        ============================================ */
         header {
-            background: #111 url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
-            padding: 140px 30px;
+            background: #111 url('https://images.unsplash.com/photo-1541599540903-216a46caab45?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
+            padding: 160px 20px;
             text-align: center;
             color: #fff;
         }
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 52px;
+
+        header h1 {
+            font-size: 62px;
             margin: 0;
-            letter-spacing: 0.04em;
+            font-weight: 500;
         }
+
         header p {
-            font-size: 18px;
-            margin-top: 15px;
-            letter-spacing: 0.04em;
+            font-size: 20px;
+            margin-top: 18px;
+            opacity: 0.9;
         }
+
+        /* ===========================================
+           Section layout
+        ============================================ */
         section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+            max-width: var(--max-width);
+            margin: 80px auto;
+            padding: 0 25px;
         }
-        h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #6b5e4e;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
         }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+            color: var(--accent-darkgold);
+        }
+
+        .section-title p {
+            color: var(--text-soft);
+            font-size: 18px;
+        }
+
+        /* ===========================================
+           Card Style
+        ============================================ */
         .card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            margin-bottom: 35px;
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 35px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
         }
+
+        /* ===========================================
+           Two-column Grid
+        ============================================ */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===========================================
+           Image blocks
+        ============================================ */
+        .img-block {
+            width: 100%;
+            border-radius: var(--radius);
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ===========================================
+           Highlight List
+        ============================================ */
+        .list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list li {
+            padding-left: 18px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        .list li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+        }
+
+        /* ===========================================
+           CTA Button
+        ============================================ */
+        .cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 16px 38px;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 30px;
+            background: var(--accent-darkgold);
+            transition: 0.3s;
+        }
+        .cta a:hover {
+            background: var(--accent-gold);
+        }
+
+        /* ===========================================
+           Footer
+        ============================================ */
         footer {
             text-align: center;
-            padding: 40px;
-            color: #777;
+            padding: 45px;
+            background: #f2eee7;
             font-size: 14px;
+            color: #444;
         }
     </style>
 </head>
 
 <body>
 
+<!-- ===========================================
+     HERO
+============================================ -->
 <header>
     <h1>Ikitaria</h1>
-    <p>Japan × Italy Premium Trading & Cultural Bridge</p>
+    <p>Japan × Italy — Premium Trading & Authentic Cultural Bridge</p>
 </header>
 
+<!-- ===========================================
+     ABOUT
+============================================ -->
 <section>
-    <h2>About Ikitaria</h2>
+    <div class="section-title">
+        <h2>About Us</h2>
+        <p>Ikitariaは日本とイタリアをつなぐ、静かなラグジュアリーの香りを纏うトレーディングハウスです。</p>
+    </div>
+
     <div class="card">
         <p>
-            Ikitariaは、日本とイタリアを結ぶプレミアム商社として、食品・クラフト・デザイン・ワイン・オリーブオイルなど、
-            高品質プロダクトを橋渡しするトレーディングハウスです。
+            私たちは「文化・味・技術・美」を本気で守り抜くプレミアム商社として、高品質なイタリア食材・ワイン・オリーブオイル・クラフト製品を日本へ届けています。
+            小ロットから大規模商流まで幅広く対応し、世界観のあるブランドを日本・アジアへ橋渡しします。
         </p>
-    </div>
-
-    <h2>Our Mission</h2>
-    <div class="card">
-        <p>
-            両国の「文化・味・技術・美意識」を深く理解し、本物だけを届ける。  
-            小ロットからB2B、ブランド構築サポートまで柔軟に対応します。
-        </p>
-    </div>
-
-    <h2>Main Business</h2>
-    <div class="card">
-        <ul>
-            <li>プレミアム食品・飲料の輸出入（イタリア→日本 / 日本→EU）</li>
-            <li>OEM製造サポート（香水・食品・クラフト）</li>
-            <li>現地リサーチ・マーケット分析</li>
-            <li>ブランド/パッケージ構築支援</li>
-        </ul>
-    </div>
-
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: contact@ikitaria.com</p>
     </div>
 </section>
 
+<!-- ===========================================
+     OUR STORY
+============================================ -->
+<section>
+    <div class="grid-2">
+        <div>
+            <div class="section-title" style="text-align:left;">
+                <h2>Our Story</h2>
+            </div>
+            <p>
+                Ikitariaは、日本人とイタリア人の2名による小さなチームから始まりました。  
+                私たちが扱うのは「モノ」ではなく、「文化」と「背景」と「本物の価値」です。
+            </p>
+            <p>
+                イタリアの生産者が込める情熱、日本の職人が守る繊細さ。  
+                この2つが出会った瞬間、世界にひとつだけの魅力が生まれます。
+            </p>
+        </div>
+
+        <div>
+            <div class="img-block" style="background-image:url('https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=1400&q=60');"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================
+     MAIN BUSINESS
+============================================ -->
+<section>
+    <div class="section-title">
+        <h2>Main Business</h2>
+        <p>小ロットから大規模B2Bまで、柔軟な対応が可能です。</p>
+    </div>
+
+    <div class="card">
+        <ul class="list">
+            <li>プレミアム食品・飲料の輸出入（Italy→Japan / Japan→EU）</li>
+            <li>大規模オリーブオイル・ワイン取り扱い（20〜1,000MT）</li>
+            <li>OEM製造サポート（香水・食品・クラフト）</li>
+            <li>ブランド/パッケージ構築支援</li>
+            <li>市場リサーチ・プロダクト企画</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===========================================
+     OLIVE OIL SECTION
+============================================ -->
+<section>
+    <div class="grid-2">
+        <div>
+            <div class="img-block" style="background-image:url('https://images.unsplash.com/photo-1600783489682-3c498b6b74d2?auto=format&fit=crop&w=1350&q=60');"></div>
+        </div>
+
+        <div>
+            <div class="section-title" style="text-align:left;">
+                <h2>Olive Oil Trading</h2>
+            </div>
+
+            <p>
+                IkitariaはイタリアおよびEU圏の高級オリーブオイル生産者と直接つながり、  
+                **20MT〜1000MT規模のバルク取引** に対応しています。
+            </p>
+
+            <ul class="list">
+                <li>酸度0.18%以下のプレミアEVOO</li>
+                <li>標準グレードEVOO（価格重視）</li>
+                <li>Pomace Oil（高需要・大量ロット対応）</li>
+                <li>Flexitank, Bottled, Private Label対応</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================
+     OEM SECTION
+============================================ -->
+<section>
+    <div class="grid-2">
+        <div>
+            <div class="section-title" style="text-align:left;">
+                <h2>OEM Partners</h2>
+            </div>
+
+            <p>
+                香水・アロマ・クラフト食品・ボトル飲料など、  
+                **小ロットから始められるOEM製造** をイタリア・スペイン・日本でサポートしています。
+            </p>
+
+            <p>
+                パッケージデザイン、製造管理、輸送、品質管理まで、  
+                あなたのブランドが市場で光を放つためのフルライン支援を提供します。
+            </p>
+        </div>
+
+        <div>
+            <div class="img-block" style="background-image:url('https://images.unsplash.com/photo-1559715541-5daf8a0296b6?auto=format&fit=crop&w=1350&q=60');"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================
+     COOKING EVENT
+============================================ -->
+<section>
+    <div class="section-title">
+        <h2>2025年2月 — イタリア料理教室</h2>
+        <p>リアル体験を通じて、Ikitariaの世界観とプロダクトを直接お届けします。</p>
+    </div>
+
+    <div class="card">
+        <p>
+            来年2月、日本で本格イタリア料理教室を開催します。  
+            イタリア食文化の魅力を五感で味わいながら、Ikitariaが取り扱うプレミアム食材も紹介予定です。
+        </p>
+
+        <p>
+            教室では、  
+            <strong>オリーブオイル、トマトソース、パスタ、デザートなどの試食と販売会</strong> を実施。  
+            少人数制で特別な体験を提供します。
+        </p>
+
+        <div class="cta">
+            <a href="#contact">詳細を問い合わせる</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================
+     OUR PHILOSOPHY
+============================================ -->
+<section>
+    <div class="section-title">
+        <h2>Our Philosophy</h2>
+        <p>「本物であること」「誠実さ」「美しさ」</p>
+    </div>
+
+    <div class="card">
+        <p>
+            私たちが扱うのは、単なる“商品”ではありません。  
+            その土地で生まれ、職人が磨き、文化が育てた「本物」だけを扱います。
+        </p>
+        <p>
+            生産者の思いと、バイヤーの期待を同じ温度で理解し、  
+            その橋渡し役として最も誠実なスタンスで向き合います。
+        </p>
+        <p>
+            Ikitariaは、静かで上質な価値の流れを創る商社です。
+        </p>
+    </div>
+</section>
+
+<!-- ===========================================
+     CONTACT
+============================================ -->
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact</h2>
+        <p>ご相談・見積もり・サンプル依頼など、お気軽にお問い合わせください。</p>
+    </div>
+
+    <div class="card">
+        <p style="font-size:20px; font-weight:600;">Email</p>
+        <p style="margin-top:-10px;">contact@ikitaria.com</p>
+
+        <p style="font-size:20px; margin-top:25px; font-weight:600;">対応言語</p>
+        <ul class="list">
+            <li>日本語</li>
+            <li>英語</li>
+            <li>イタリア語</li>
+        </ul>
+
+        <div class="cta">
+            <a href="mailto:contact@ikitaria.com">メールを送る</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================
+     FOOTER
+============================================ -->
 <footer>
     © 2025 Ikitaria. All Rights Reserved.
 </footer>
 
 </body>
 </html>
-
 
